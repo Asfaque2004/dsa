@@ -1,0 +1,11 @@
+function LCSLength(X[1..m], Y[1..n])
+    let dp[0..m][0..n] be a 2D array
+    for i = 0 to m
+        for j = 0 to n
+            if i = 0 or j = 0
+                dp[i][j] = 0
+            else if X[i-1] = Y[j-1]
+                dp[i][j] = dp[i-1][j-1] + 1
+            else
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    return dp[m][n]
